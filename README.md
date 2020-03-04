@@ -17,3 +17,12 @@ easy_install --upgrade pip
 
 #创建项目
 django-admin startproject DjangoLogin
+
+
+#数据库迁移
+python manage.py makemigrations
+python manage.py migrate
+
+
+#创建管理账号，访问http://127.0.0.1:8000/admin/
+python manage.py createsuperuser

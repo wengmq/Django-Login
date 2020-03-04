@@ -29,7 +29,9 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
+#每次创建了新的app后，都需要在全局settings中注册，
+# 这样Django才知道你有新的应用上线了。
+# 在settings的下面部分添加‘login’，建议在最后添加个逗号。
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'login',
 ]
 
 MIDDLEWARE = [
@@ -72,7 +75,11 @@ WSGI_APPLICATION = 'DjangoLogin.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
+# Django默认使用SQLite数据库，并内置SQLite数据库的访问API，
+# 也就是说和Python一样原生支持SQLite。
+# 本项目使用SQLite作为后端数据库，
+# 因此不需要修改settings中这部分内容。
+# 如果你想要使用别的数据库，请自行修改该部分设置。
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -102,19 +109,32 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
+# Django默认使用美国时间和英语
+# 我们把它改为亚洲/上海时间和中文
+# （别问我为什么没有北京时间，也别把语言写成zh-CN），注意USE_TZ 改成False了。
+# LANGUAGE_CODE = 'en-us'
+#
+# TIME_ZONE = 'UTC'
+#
+# USE_I18N = True
+#
+# USE_L10N = True
+#
+# USE_TZ = True
+LANGUAGE_CODE = 'zh-hans'     # 这里修改了
 
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'    # 这里修改了
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False    # 这里修改了
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
