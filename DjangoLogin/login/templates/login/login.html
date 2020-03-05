@@ -16,10 +16,7 @@
             <div class="col">
               <form class="form-login" action="/login/" method="post">
 
-{#                根据后端返回的信息弹出相应的提示框#}
-                 {% if message %}
-                  <div class="alert alert-warning">{{ message }}</div>
-                 {% endif %}
+
 
 {#              使用POST的方法时，必须添加{% csrf_token %}标签，用于处理csrf安全机制；#}
                   {% csrf_token %}
@@ -50,10 +47,26 @@
                       {{ login_form.password }}
                     </div>
 
+                    <div class="form-group">
+                      {{ login_form.captcha.label_tag }}
+                      {{ login_form.captcha }}
+                    </div>
+
                   <div>
                   <a href="/register/" class="text-success "><ins>新用户注册</ins></a>
                   <button type="submit" class="btn btn-primary float-right">登录</button>
                   </div>
+
+                    <br>
+
+{#              用于明确指示用户的验证码不正确。#}
+                  {% if login_form.captcha.errors %}
+                        <div class="alert-warning">{{ login_form.captcha.errors }}</div>
+{#                根据后端返回的信息弹出相应的提示框#}
+                 {% elif message %}
+                  <div class="alert alert-warning">{{ message }}</div>
+                 {% endif %}
+
               </form>
             </div>
     </div> <!-- /container -->

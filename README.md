@@ -1,7 +1,7 @@
 # Django-Login
 
 #进入项目
-cd C:\project\Django-Login
+cd C:\project\Django-Login\DjangoLogin
 
 #进入环境变量
 C:\Users\wengmq\Virtualenv\DjangoLogin_env\Scripts\activate
