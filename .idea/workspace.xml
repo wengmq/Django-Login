@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ff6181b3-c570-40c3-ad2b-d745cb19c660" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DjangoLogin/login/templates/login/confirm.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DjangoLogin/send_mail.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DjangoLogin/DjangoLogin/settings.py" afterPath="$PROJECT_DIR$/DjangoLogin/DjangoLogin/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DjangoLogin/DjangoLogin/urls.py" afterPath="$PROJECT_DIR$/DjangoLogin/DjangoLogin/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DjangoLogin/db.sqlite3" afterPath="$PROJECT_DIR$/DjangoLogin/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DjangoLogin/login/admin.py" afterPath="$PROJECT_DIR$/DjangoLogin/login/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DjangoLogin/login/models.py" afterPath="$PROJECT_DIR$/DjangoLogin/login/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DjangoLogin/login/views.py" afterPath="$PROJECT_DIR$/DjangoLogin/login/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-    </list>
+    <list default="true" id="ff6181b3-c570-40c3-ad2b-d745cb19c660" name="Default" comment="" />
     <ignored path="Django-Login.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
