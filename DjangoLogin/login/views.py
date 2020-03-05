@@ -2,12 +2,20 @@ from django.shortcuts import render
 from django.shortcuts import redirect
 from . import models
 from . import forms
+import hashlib
 # Create your views here.
 
 def index(request):
     if not request.session.get('is_login',None):
         return redirect('/login/')
     return render(request,'login/index.html')
+
+#用于加密密码存入数据库中
+def hash_code(s,salt='DjangoLogin'):# 加点盐
+    h = hashlib.sha256()
+    s += salt
+    h.update(s.encode())# update方法只接收bytes类型
+    return h.hexdigest()
 
 def login(request):
 
@@ -34,7 +42,7 @@ def login(request):
                 message = '用户不存在！'
                 return render(request, 'login/login.html', locals())
 
-            if user.password == password:
+            if user.password == hash_code(password):
                 #往session字典内写入用户状态和数据
                 request.session['is_login'] = True
                 request.session['user_id'] = user.id
@@ -99,7 +107,8 @@ def register(request):
                 #写入到数据库，先新建一个models.User()对象
                 new_user = models.User()
                 new_user.name = username
-                new_user.password = password1
+                #在数据库中加密密码
+                new_user.password = hash_code(password1)
                 new_user.email = email
                 new_user.sex = sex
                 new_user.save()
