@@ -138,4 +138,21 @@ USE_TZ = False    # 这里修改了
 
 STATIC_URL = '/static/'
 
+#Python中已经内置了一个smtp邮件发送模块，Django在此基础上进行了简单地封装。
+#第一行EMAIL_BACKEND，指定发送邮件的后端模块，大多数情况下照抄！
+#第二行EMAIL_HOST，不用说，发送方的smtp服务器地址，建议使用新浪家的；
+#第三行EMAIL_PORT，smtp服务端口，默认为25；
+#第四行EMAIL_HOST_USER，你在发送服务器的用户名；
+#第五行EMAIL_HOST_PASSWORD，就是客户端授权码，需要你登陆到邮箱的客户端，在设置中，在开启POP3/SMTP服务，并开启客户端授权密码时会设置授权码。
+#特别说明：
+#某些邮件公司可能不开放smtp服务
+#某些公司要求使用ssl安全机制
+#某些smtp服务对主机名格式有要求
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.sina.com'
+EMAIL_PORT = 25
+EMAIL_HOST_USER = 'wengmq5216@sina.com' # 帐号
+EMAIL_HOST_PASSWORD = '6487514e63b3d289'  # 授权码
+# 注册有效期天数
+CONFIRM_DAYS = 7
